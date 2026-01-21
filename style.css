@@ -1,0 +1,29 @@
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:18px 0;
+}
+
+.gallery img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+  transition:transform 0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.08);
+}
+
+/* Mobile optimization */
+@media(max-width:480px){
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .gallery img{
+    height:120px;
+  }
+}
