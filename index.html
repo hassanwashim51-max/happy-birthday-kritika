@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Kritika 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff9acb,#8fd3ff,#ffffff);
+  overflow-x:hidden;
+  color:#fff;
+  transition:background 2s;
+}
+
+body.night{
+  background:linear-gradient(135deg,#1b1b3a,#2c2c54,#000);
+}
+
+/* Falling Hearts */
+.heart{
+  position:fixed;
+  top:-10px;
+  font-size:18px;
+  animation:fall linear infinite;
+  opacity:0.7;
+}
+@keyframes fall{
+  to{transform:translateY(110vh);}
+}
+
+.container{
+  max-width:480px;
+  margin:auto;
+  padding:30px 16px;
+  text-align:center;
+}
+
+.card{
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(14px);
+  border-radius:24px;
+  padding:28px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.3);
+}
+
+.photo{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #fff;
+  margin-bottom:18px;
+}
+
+h1{font-size:26px;margin-bottom:8px;}
+h2{font-size:17px;font-weight:400;margin-bottom:18px;}
+
+p{
+  font-size:15px;
+  line-height:1.75;
+  margin-bottom:14px;
+}
+
+button{
+  margin-top:18px;
+  padding:12px 26px;
+  border:none;
+  border-radius:30px;
+  background:#ff5fa2;
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 12px 25px rgba(0,0,0,0.35);
+}
+
+.hidden{display:none;}
+
+.cake{font-size:80px;margin-top:15px;}
+.candle{font-size:28px;animation:flicker 1s infinite;}
+@keyframes flicker{
+  50%{opacity:0.4;}
+}
+
+/* Balloons */
+.balloon{
+  position:fixed;
+  bottom:-80px;
+  font-size:36px;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  to{transform:translateY(-120vh);}
+}
+
+.secret-letter{
+  margin-top:20px;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.15);
+}
+
+.goodbye{
+  margin-top:22px;
+  font-size:14px;
+  opacity:0.9;
+}
+</style>
+</head>
+<body>
+
+<script>
+/* Falling hearts */
+for(let i=0;i<35;i++){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💗";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=4+Math.random()*5+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+<div class="container">
+  <div class="card">
+
+    <!-- Replace image -->
+    <img src="https://via.placeholder.com/300" class="photo" alt="Kritika">
+
+    <h1>Happy 18th Birthday 🎂</h1>
+    <h2>Kritik Boro (Kritika)</h2>
+
+    <p>
+      Today is 21st January.  
+      You are 18 today.  
+      A new chapter for you…  
+      and a quiet reminder for me.
+    </p>
+
+    <p>
+      We are no longer together.  
+      You walked away,  
+      and I stayed with memories  
+      that still know your name.
+    </p>
+
+    <p>
+      I’m not here to blame you.  
+      I’m just here to be honest —  
+      losing you hurt more  
+      than I ever admitted.
+    </p>
+
+    <button onclick="showSurprise()">Open Your Surprise 🎁</button>
+
+    <div id="surprise" class="hidden">
+      <div class="cake">🎂</div>
+      <div class="candle" id="candle">🕯️🕯️🕯️</div>
+
+      <p>
+        Close your eyes.  
+        Make a wish.  
+        Blow the candles by blowing air 💨
+      </p>
+
+      <!-- Secret Letter -->
+      <div id="letter" class="secret-letter hidden">
+        <p>
+          If you ever wondered  
+          whether you truly mattered —  
+          you did.  
+          You always did.
+        </p>
+
+        <p>
+          I wanted a future with you,  
+          not perfection, just honesty.  
+          Maybe we failed…  
+          but my feelings were real.
+        </p>
+      </div>
+
+      <!-- Final Goodbye -->
+      <div id="goodbye" class="goodbye hidden">
+        <p>
+          This is not me asking you to return.  
+          This is me learning to let go.
+        </p>
+
+        <p>
+          I hope you grow, smile,  
+          and become everything  
+          you ever dreamed of.
+        </p>
+
+        <p>
+          And if one day  
+          you remember me —  
+          remember that  
+          I loved you quietly till the end.
+        </p>
+
+        <p>Goodbye, Kritika 🤍</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showSurprise(){
+  document.getElementById("surprise").style.display="block";
+  document.body.classList.add("night");
+
+  for(let i=0;i<12;i++){
+    let b=document.createElement("div");
+    b.className="balloon";
+    b.innerHTML="🎈";
+    b.style.left=Math.random()*100+"vw";
+    b.style.animationDuration=4+Math.random()*4+"s";
+    document.body.appendChild(b);
+  }
+}
+
+/* Blow candle + reveal secrets */
+navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
+  const ctx=new AudioContext();
+  const mic=ctx.createMediaStreamSource(stream);
+  const analyser=ctx.createAnalyser();
+  mic.connect(analyser);
+  const data=new Uint8Array(analyser.frequencyBinCount);
+
+  function listen(){
+    analyser.getByteFrequencyData(data);
+    let volume=data.reduce((a,b)=>a+b)/data.length;
+
+    if(volume>40){
+      document.getElementById("candle").innerHTML="✨✨✨";
+      document.getElementById("letter").style.display="block";
+      setTimeout(()=>{
+        document.getElementById("goodbye").style.display="block";
+      },4000);
+    }
+    requestAnimationFrame(listen);
+  }
+  listen();
+});
+</script>
+
+</body>
+</html>
